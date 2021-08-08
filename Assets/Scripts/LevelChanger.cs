@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class LevelChanger : MonoBehaviour
 {
+
     [SerializeField]
     private FieldGeneratior fieldGenerator;
     [SerializeField, Range(1, 2)]
@@ -13,6 +14,7 @@ public class LevelChanger : MonoBehaviour
     private UnityEvent gameEnd;
     [SerializeField]
     private int maxLevelCount = 3;
+
     private int level = 1;
 
     private void Start()
@@ -38,18 +40,21 @@ public class LevelChanger : MonoBehaviour
             
         }
     }
-    public void StartGame()
+    private void DefaultFieldSettings()
     {
         fieldGenerator.Clear();
         fieldGenerator.transform.position = Vector2.zero;
-        fieldGenerator.GenerateField(1);
+        fieldGenerator.GenerateField(level);
+    }
+    public void StartGame()
+    {
+
+        DefaultFieldSettings();   
+        
     }
     private IEnumerator ChangeLevelAfterSeconds(float sec)
     {
         yield return new WaitForSeconds(sec);
-
-        fieldGenerator.Clear();
-        fieldGenerator.transform.position = Vector2.zero;
-        fieldGenerator.GenerateField(level);
+        DefaultFieldSettings();
     }
 }

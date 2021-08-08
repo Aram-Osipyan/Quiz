@@ -12,4 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2569230f0ab1b454d827cd9518595a54, type: 3}
   m_Name: Numbers
   m_EditorClassIdentifier: 
-  _cardDatas: []
+  _cardDatas:
+  - _identifier: 1
+    _sprite: {fileID: 1422184923334757970, guid: 65e72ffe41497ff44b23c497ef4561f8,
+      type: 3}
+    _cellBackgroundColor: {r: 0.93725497, g: 0.6039216, b: 0.8235295, a: 1}
+  - _identifier: 2
+    _sprite: {fileID: 1808195818850983521, guid: 65e72ffe41497ff44b23c497ef4561f8,
+      type: 3}
+    _cellBackgroundColor: {r: 1, g: 0.54509807, b: 0.6392157, a: 1}
+  - _identifier: 3
+    _sprite: {fileID: -7900951133411543555, guid: 65e72ffe41497ff44b23c497ef4561f8,
+      type: 3}
+    _cellBackgroundColor: {r: 0.9058824, g: 0.59607846, b: 0.30588236, a: 1}
+  - _identifier: 4
+    _sprite: {fileID: 2267071060405275165, guid: 65e72ffe41497ff44b23c497ef4561f8,
+      type: 3}
+    _cellBackgroundColor: {r: 0.8235295, g: 0.7372549, b: 0.47450984, a: 1}
+  - _identifier: 5
+    _sprite: {fileID: -7398325283844340781, guid: 65e72ffe41497ff44b23c497ef4561f8,
+      type: 3}
+    _cellBackgroundColor: {r: 0.7960785, g: 0.4901961, b: 0.34509805, a: 1}
+  - _identifier: 6
+    _sprite: {fileID: -7015292045520539579, guid: 65e72ffe41497ff44b23c497ef4561f8,
+      type: 3}
+    _cellBackgroundColor: {r: 0.6509804, g: 0.5803922, b: 0.93725497, a: 1}
+  - _identifier: 7
+    _sprite: {fileID: -675344402919758444, guid: 65e72ffe41497ff44b23c497ef4561f8,
+      type: 3}
+    _cellBackgroundColor: {r: 0.85098046, g: 0.49411768, b: 0.62352943, a: 1}
+  - _identifier: 8
+    _sprite: {fileID: 3547489320769246608, guid: 65e72ffe41497ff44b23c497ef4561f8,
+      type: 3}
+    _cellBackgroundColor: {r: 0.654902, g: 0.5882353, b: 0.93725497, a: 1}
+  - _identifier: 9
+    _sprite: {fileID: -1155199509967091035, guid: fabdd95ae62236e499350f89bfb51203,
+      type: 3}
+    _cellBackgroundColor: {r: 0.9058824, g: 0.59607846, b: 0.2901961, a: 1}
+  - _identifier: 10
+    _sprite: {fileID: 4142021021139464533, guid: 9fa4a93865ddd9346a604eaed4b76dd6,
+      type: 3}
+    _cellBackgroundColor: {r: 0.93725497, g: 0.6, b: 0.8313726, a: 1}
