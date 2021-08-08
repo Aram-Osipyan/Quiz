@@ -37,7 +37,26 @@ public class FieldGeneratior : MonoBehaviour
         int taskNumber = correctAnswers[randIndex];
         TaskText.text = "Find " + cardBundleData.CardDatas[taskNumber].Identifier;
         correctAnswers.RemoveAt(randIndex);
+        List<int> cardsIndexes = InitRandomCardIndexes(rows, taskNumber);
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < cols; col++)
+            {
+                GameObject cell = (GameObject)Instantiate(cellSprite, Vector3.zero, Quaternion.identity, transform);
+                cards.Add(cell);
+                cell.GetComponent<AnswerCard>().InitializateCard(cardBundleData.CardDatas[cardsIndexes[row * cols + col]],
+                    cardBundleData.CardDatas[taskNumber].Identifier);
 
+                float posX = col * tileSize;
+                float posY = row * tileSize;
+                cell.transform.position = new Vector2(posX, posY);
+            }
+        }
+        CenterPosition(rows);
+    }
+
+    private List<int> InitRandomCardIndexes(int rows, int taskNumber)
+    {
         List<int> answerChoise = new List<int>();
         for (int i = 0; i < cardBundleData.CardDatas.Length; i++)
         {
@@ -46,28 +65,14 @@ public class FieldGeneratior : MonoBehaviour
         answerChoise.RemoveAt(taskNumber);
         List<int> cardsIndexes = new List<int>();
         int correctAnswerIndex = Random.Range(0, rows * cols);
-        for (int i = 0; i < rows*cols; i++)
+        for (int i = 0; i < rows * cols; i++)
         {
             int index = Random.Range(0, answerChoise.Count);
             cardsIndexes.Add(answerChoise[index]);
             answerChoise.RemoveAt(index);
         }
         cardsIndexes[correctAnswerIndex] = taskNumber;
-        for (int row = 0; row < rows; row++)
-        {
-            for (int col = 0; col < cols; col++)
-            {
-                GameObject cell = (GameObject)Instantiate(cellSprite, Vector3.zero,Quaternion.identity,transform);
-                cards.Add(cell);                
-                cell.GetComponent<AnswerCard>().InitializateCard(cardBundleData.CardDatas[cardsIndexes[row*cols+col]], 
-                    cardBundleData.CardDatas[taskNumber].Identifier);       
-
-                float posX = col * tileSize;
-                float posY = row * tileSize;
-                cell.transform.position = new Vector2(posX, posY);
-            }
-        }
-        CenterPosition(rows);
+        return cardsIndexes;
     }
 
     public void Clear()

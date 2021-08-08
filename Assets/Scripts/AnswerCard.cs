@@ -11,11 +11,11 @@ public class AnswerCard : MonoBehaviour
     private ParticleSystem particles;
     public string CorrectAnswer { set; get; }
     public string Identifier { set; get; }
+    public bool isBlocked { private set; get; } = false;
     private GameObject cardLetter;
-    private ClickBlocker parentNode;
-    private void Start()
+    public void SetState(bool _isBlocked)
     {
-        parentNode = transform.parent.GetComponent<ClickBlocker>();
+        isBlocked = _isBlocked;
     }
     public void SetOption(string correctAnswer, string identifier)
     {
@@ -34,7 +34,7 @@ public class AnswerCard : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (parentNode.isGameEnd)
+        if (isBlocked)
         {
             return;
         }

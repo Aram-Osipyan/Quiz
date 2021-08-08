@@ -5,8 +5,8 @@ using UnityEngine;
 public class ClickBlocker : MonoBehaviour
 {
     public bool isGameEnd { private set; get; } = false;
-    public void SetEndGame(bool _isGameEnd)
+    public void SetGameState(bool _isGameEnd)
     {
-        isGameEnd = _isGameEnd;
+        BroadcastMessage("SetState", _isGameEnd);
     }
 }
